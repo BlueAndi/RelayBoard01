@@ -11,13 +11,13 @@ The board is a VSCP node for the CAN-bus and controls several relays, which are 
 ## Principle Flows
 
 ### Pushbutton
-![pushbutton_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/BlueAndi/RelayBoard01/master/doc/architecture/pushbutton_behaviour.plantuml)
+![pushbutton_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/BlueAndi/RelayBoard01/master/doc/architecture/pushbutton_behavior.plantuml)
 
 ### Relay
-![relay_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/BlueAndi/RelayBoard01/master/doc/architecture/relay_behaviour.plantuml)
+![relay_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/BlueAndi/RelayBoard01/master/doc/architecture/relay_behavior.plantuml)
 
 ### Shutter
-![shutter_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/BlueAndi/RelayBoard01/master/doc/architecture/shutter_behaviour.plantuml)
+![shutter_behaviour](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/BlueAndi/RelayBoard01/master/doc/architecture/shutter_behavior.plantuml)
 
 # Used Libraries
 
