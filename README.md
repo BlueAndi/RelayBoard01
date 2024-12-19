@@ -26,7 +26,7 @@ The board is a VSCP node for the CAN-bus and controls several relays, which are 
 | [Arduino](https://github.com/arduino/ArduinoCore-avr) | Arduino AVR Boards | LGPL |
 | [avr-can-lib](https://github.com/dergraaf/avr-can-lib) | MCP2515 CAN transceiver driver. | BSD |
 | [PlatformIO](https://platformio.org) | PlatformIO is a cross-platform, cross-architecture, multiple framework, professional tool for embedded systems engineers and for software developers who write applications for embedded products. | Apache-2.0 |
-| [VSCP L1 Framework](https://github.com/BlueAndi/vscp-framework) | The Very Simple Control Protocol (VSCP), an open and free protocol for IoT/m2m automation tasks. | MIT |
+| [VSCP L1 Framework](https://github.com/BlueAndi/vscp-framework) | Very Simple Control Protocol (VSCP) Level 1 Framework. | MIT |
 
 # Issues, Ideas And Bugs
 If you have further ideas or you found some bugs, great! Create a [issue](https://github.com/BlueAndi/RelayBoard01/issues) or if you are able and willing to fix it by yourself, clone the repository and create a pull request.

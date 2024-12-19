@@ -1,0 +1,14 @@
+{
+    "name": "avr-can-lib",
+    "version": "0.1.0",
+    "description": "...",
+    "authors": [{
+        "name": "Fabian Greif",
+        "url": "https://github.com/dergraaf/avr-can-lib",
+        "maintainer": true
+    }],
+    "license": "MIT",
+    "dependencies": [],
+    "frameworks": "*",
+    "platforms": "*"
+}
