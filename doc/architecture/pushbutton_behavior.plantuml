@@ -1,0 +1,54 @@
+@startuml pushbutton_behavior
+
+participant "Pushbutton at port 1" as pushButton1
+participant "Pushbutton at port 2" as pushButton2
+participant "Node" as node
+participant "Communication Bus" as comBus
+
+autoactivate on
+
+alt If pushbutton events are enabled
+
+    pushButton1 ->> node: Pressed
+        node ->> comBus: CLASS1.INFORMATION::Button(0x01, zone, sub-zone, 0)
+        deactivate comBus
+    deactivate node
+
+    pushButton1 ->> node: Released
+        node ->> comBus: CLASS1.INFORMATION::Button(0x00, zone, sub-zone, 0)
+        deactivate comBus
+    deactivate node
+
+    pushButton1 ->> node: Triggered once
+        node ->> comBus: CLASS1.INFORMATION::Button(0x0A, zone, sub-zone, 0)
+        deactivate comBus
+    deactivate node
+
+    pushButton1 ->> node: Triggered twice
+        node ->> comBus: CLASS1.INFORMATION::Button(0x12, zone, sub-zone, 0)
+        deactivate comBus
+    deactivate node
+
+    pushButton2 ->> node: Pressed
+        node ->> comBus: CLASS1.INFORMATION::Button(0x01, zone, sub-zone, 1)
+        deactivate comBus
+    deactivate node
+
+    pushButton2 ->> node: Released
+        node ->> comBus: CLASS1.INFORMATION::Button(0x00, zone, sub-zone, 1)
+        deactivate comBus
+    deactivate node
+
+    pushButton2 ->> node: Triggered once
+        node ->> comBus: CLASS1.INFORMATION::Button(0x0A, zone, sub-zone, 1)
+        deactivate comBus
+    deactivate node
+
+    pushButton2 ->> node: Triggered twice
+        node ->> comBus: CLASS1.INFORMATION::Button(0x12, zone, sub-zone, 1)
+        deactivate comBus
+    deactivate node
+
+end
+
+@enduml

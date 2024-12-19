@@ -1,0 +1,25 @@
+@startuml relay_behavior
+
+participant "Relay\nat port X" as relay
+participant "Node" as node
+participant "Communication Bus" as comBus
+
+autoactivate on
+
+comBus ->> node: Event
+
+note over node: Forward to decision matrix
+
+alt If event match with decision matrix row, a action will be executed.
+    node -> relay: Enable/Disable/Toggle
+    node <-- relay
+
+    alt If relay events are enabled
+        node ->> comBus: CLASS1.INFORMATION::On/Off
+        deactivate comBus
+    end
+end
+
+deactivate node
+
+@enduml

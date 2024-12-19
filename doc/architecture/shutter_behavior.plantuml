@@ -1,0 +1,50 @@
+@startuml shutter_behavior
+
+participant "Relay\nat port X" as relay1
+participant "Relay\nat port X + 1" as relay2
+participant "Node" as node
+participant "Communication Bus" as comBus
+
+autoactivate on
+
+comBus ->> node: Event
+note over node: Forward to decision matrix
+
+note over relay1,relay2: Two relays are necessary to drive a shutter.\nOne which controls the drive direction\nand one which is used to power the shutter.
+alt If event match with decision matrix row, a action will be executed.
+    node -> relay2: Enable/Disable (drive up/down)
+    node <-- relay2
+    node -> relay1: Enable/Disable (power on/off)
+    node <-- relay1
+
+    alt If shutter events are enabled
+        alt
+            node ->> comBus: CLASS1.INFORMATION::ShutterUp
+            deactivate comBus
+        end
+
+        alt
+            node ->> comBus: CLASS1.INFORMATION::/ShutterDown
+            deactivate comBus
+        end
+
+        alt
+            node ->> comBus: CLASS1.INFORMATION::ShutterReachedTopEnd
+            deactivate comBus
+        end
+
+        alt
+            node ->> comBus: CLASS1.INFORMATION::ShutterReachedBottomEnd
+            deactivate comBus
+        end
+
+        alt
+            node ->> comBus: CLASS1.INFORMATION::Stop
+            deactivate comBus
+        end
+    end
+end
+
+deactivate node
+
+@enduml
